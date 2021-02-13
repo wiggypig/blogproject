@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog Site</title>
+    <!-- Latest BootStrap minified CSS
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    -->
+    <!-- import standard styling sheet -->
+    <div th:replace="fragments/styles :: head-styles"></div>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 th:text="${title}"></h1>
+                </div>
+                <div class="panel-body">
+                    <strong><p th:text="${author}"/></strong>
+                    <p th:text="${blogEntry}" />
+                </div>
+                <div class="panel-footer">
+                    <!-- Link to Update -->
+                    <!-- Link to Show  -->
+                    <!--  Link to Destroy -->
+                    <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+                    <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="/fragments/styling :: scripts" ></div>
+</body>
+</html>
